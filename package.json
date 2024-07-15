@@ -6,9 +6,13 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "generate": "drizzle-kit generate",
+    "migrate": "drizzle-kit migrate"
   },
   "dependencies": {
+    "@libsql/client": "^0.7.0",
+    "@types/bun": "^1.1.6",
     "drizzle-orm": "^0.32.0",
     "next": "14.2.5",
     "react": "^18",
