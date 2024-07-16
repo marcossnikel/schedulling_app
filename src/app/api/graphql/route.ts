@@ -1,8 +1,14 @@
+import { readFileSync } from "node:fs";
+import path from "node:path";
 import { ApolloServer } from "@apollo/server";
 import { startServerAndCreateNextHandler } from "@as-integrations/next";
 import { NextRequest } from "next/server";
 import { resolvers } from "./resolvers";
-import { typeDefs } from "./schema";
+
+const typeDefs = readFileSync(
+  path.resolve(process.cwd(), "src/app/api/graphql", "schema.graphql"),
+  { encoding: "utf-8" },
+);
 
 const server = new ApolloServer({
   resolvers,
